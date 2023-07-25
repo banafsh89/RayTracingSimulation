@@ -1,0 +1,15 @@
+# !/bin/bash
+# run raytracing code
+# dos2unix
+# chmod 755  and the name of file to compile this script
+# Kerr 0 0
+
+config=2
+photonNum=100
+seed=1150
+seedMax=1165
+while [ $seed -lt $seedMax ]; do
+	echo The number is $seed
+	nohup ./AGNsphere $config $photonNum $seed Dataagnsph.$seed.$config >> Dataagnsph.$seed.$config.log &
+	let seed=seed+1
+done
